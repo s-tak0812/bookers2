@@ -1,2 +1,27 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>User info</h1>
+
+<%= form_with model:@user |f| %>
+  <p>
+    <%= f.text_field :name, autofocus :true, placeholder: "Name" %>
+  </p>
+
+  <p>
+    <%= f.file_field :image, placeholder: "Image" %>
+    <span>
+      <% unless image.attached? %>
+        選択されていません
+      <% else %>
+        <%= image.filename %>
+      <% end %>
+    </span>
+  </p>
+
+  <p>
+    <%= f.text_area :body, placeholder: "Introduction" %>
+  </p>
+
+  <p>
+    <%= f.submit "Update User" %>
+  </p>
+
+<% end %>

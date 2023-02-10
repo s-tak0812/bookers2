@@ -3,8 +3,8 @@
 <% @users.each do |t| %>
   <div>
     <p><strong>Human</strong></p>
-    <%= t.get_image %>
+    <%= image_tag t.get_image(80, 80) %>
     <%= t.name %>
-    <%= link_to "Show", users_path %>
+    <%= link_to "Show", books_path %>
   </div>
 <% end %>
