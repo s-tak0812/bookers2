@@ -1,21 +1,26 @@
 <%= flash[:notice] %>
 
+<div class="text-center mx-auto col-7">
+  <div class="text-left">
+    <h1>welcome to <span><i class="fas fa-book"></i></span>Bookers !!</h1>
+    <p>
+      In <span><i class="fas fa-book"></i></span>
+      <strong>Bookers</strong>,
+      <br class="py-5">you can share and exchange your opinions , inpressions , and emotions
+      <br>about various books!
+    </p>
 
-<h1>welcome to <span><i class="fas fa-book"></i></span>Bookers !!</h1>
-<p>
-  In <span><i class="fas fa-book"></i></span>
-  <strong>Bookers</strong>,
-  <br>you can share and exchange your opinions , inpressions , and emotions
-  <br>about various books!
-</p>
 
-<p>
+  </div>
+</div>
+
+<p class="btn btn-primary btn-lg text-center bg-info text-white">
   <%= link_to new_user_session_path do %>
     Log in
   <% end %>
 </p>
 
-<p>
+<p class="btn btn-primary btn-lg text-center bg-success text-white">
   <%= link_to new_user_registration_path do %>
     Sign up
   <% end %>
