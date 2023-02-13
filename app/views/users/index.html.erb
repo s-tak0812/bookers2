@@ -1,10 +1,10 @@
 <h1>Users</h1>
 
-<% @users.each do |t| %>
+<% @users.each do |user| %>
   <div>
     <p><strong>Human</strong></p>
-    <%= image_tag t.get_image(80, 80) %>
-    <%= t.name %>
-    <%= link_to "Show", books_path %>
+    <%= image_tag user.get_image(80, 80) %>
+    <%= user.name %>
+    <%= link_to "Show", user_path(user.id) %>
   </div>
 <% end %>

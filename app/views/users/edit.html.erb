@@ -1,19 +1,12 @@
 <h1>User info</h1>
 
-<%= form_with model:@user |f| %>
+<%= form_with model:@user do |f| %>
   <p>
-    <%= f.text_field :name, autofocus :true, placeholder: "Name" %>
+    <%= f.text_field :name, autofocus: true, placeholder: "Name" %>
   </p>
 
   <p>
     <%= f.file_field :image, placeholder: "Image" %>
-    <span>
-      <% unless image.attached? %>
-        選択されていません
-      <% else %>
-        <%= image.filename %>
-      <% end %>
-    </span>
   </p>
 
   <p>
