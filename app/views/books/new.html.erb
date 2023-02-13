@@ -1,3 +1,14 @@
+<% if @book.errors.any? %>
+  <%= "#{@book.errors} errors prohibited this obj from being saved:" %>
+    <ul>
+      <% @book.errors.full_messages.each do |m| %>
+        <li><%= m %></li>
+      <% end %>
+    </ul>
+<% end %>
+
+
+
 <h1>User info</h1>
 
 <%= image_tag @user.get_image(100, 100) %>
@@ -5,7 +16,7 @@
 <p><%= @user.name %></p>
 
 <p><strong>intoduction</strong></p>
-<!-- %= @user.body %>-->
+<%= @user.body %>
 <%= link_to edit_user_path(@user) do %>
   <i class="fas fa-user-cog"></i>
 <% end %>

@@ -24,7 +24,8 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(current_user[:id])
     @user.destroy
-    redirect_to
+    flash[:notice] = "Signed out successfully."
+    redirect_to "/"
   end
 
 
@@ -32,7 +33,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:users).permit(:name, :image, :body)
+    params.require(:user).permit(:name, :image, :body)
   end
 
   def is_matching_login_user
