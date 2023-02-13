@@ -1,20 +1,16 @@
 <h1>User info</h1>
 
 <%= form_with model:@user do |f| %>
-  <p>
-    <%= f.text_field :name, autofocus: true, placeholder: "Name" %>
-  </p>
 
-  <p>
-    <%= f.file_field :image, placeholder: "Image" %>
-  </p>
+  <p>Name</p>
+  <p><%= f.text_field :name, autofocus: true %></p>
 
-  <p>
-    <%= f.text_area :body, placeholder: "Introduction" %>
-  </p>
+  <p>Image</p>
+  <p><%= f.file_field :image %></p>
 
-  <p>
-    <%= f.submit "Update User" %>
-  </p>
+  <p>Introduction</p>
+  <p><%= f.text_area :body, autofocus: true %></p>
+
+  <p><%= f.submit "Update User" %></p>
 
 <% end %>

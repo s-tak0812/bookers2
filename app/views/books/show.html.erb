@@ -1,2 +1,16 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<h1>Book detail</h1>
+
+<%= link_to user_path(@book.user.id) do %>
+  <%= image_tag @book.user.get_image(100, 100) %>
+  <%= @book.user.name %>
+<% end %>
+
+|||
+
+<%= link_to @book.title, @book_path %>
+<%= @book.body %>
+
+<% if @book.user == current_user %>
+  <%= link_to "Edit", edit_book_path %>
+  <%= link_to "Destroy", book_path(@book), method: :delete %>
+<% end %>
