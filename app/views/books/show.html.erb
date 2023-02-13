@@ -1,3 +1,5 @@
+<%= flash[:notice] %>
+
 <h1>Book detail</h1>
 
 <%= link_to user_path(@book.user.id) do %>
@@ -12,5 +14,5 @@
 
 <% if @book.user == current_user %>
   <%= link_to "Edit", edit_book_path %>
-  <%= link_to "Destroy", book_path(@book), method: :delete %>
+  <%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %>
 <% end %>

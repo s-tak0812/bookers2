@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
+      flash[:success] = "You have updated user successfully."
       redirect_to user_path(user_session)
     else
       render :edit
@@ -23,14 +24,6 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(current_user[:id])
   end
-
-  # def destroy
-  #   @user = User.find(current_user[:id])
-  #   @user.destroy
-  #   flash[:notice] = "Signed out successfully."
-  #   redirect_to "/"
-  # end
-
 
 
   private

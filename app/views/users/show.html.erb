@@ -1,4 +1,12 @@
-<h1>Books</h1>
+<%= flash[:notice] %>
+
+<%= flash[:success] %>
+
+<h1>Bookssss</h1>
+<P>
+  <%= @user.name %>
+</P>
+
 
 <% @user.books.each do |book| %>
   <%= link_to user_path(@user.id) do %>
