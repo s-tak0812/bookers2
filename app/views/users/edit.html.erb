@@ -1,5 +1,19 @@
 <h1>User info</h1>
 
+
+<% if @user.errors.any? %>
+  <%= @user.errors.messages %>
+  <% @user.errors.full_messages.each do |m| %>
+  <ul>
+    <li>
+      <%= m %>
+    </li>
+  </ul>
+  <% end %>
+<% end%>
+
+
+
 <%= form_with model:@user do |f| %>
 
   <p>Name</p>

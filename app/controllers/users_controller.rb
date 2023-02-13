@@ -12,8 +12,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to user_path(user_session)
+    if @user.update(user_params)
+      redirect_to user_path(user_session)
+    else
+      render :edit
+    end
   end
 
 
@@ -21,12 +24,12 @@ class UsersController < ApplicationController
     @user = User.find(current_user[:id])
   end
 
-  def destroy
-    @user = User.find(current_user[:id])
-    @user.destroy
-    flash[:notice] = "Signed out successfully."
-    redirect_to "/"
-  end
+  # def destroy
+  #   @user = User.find(current_user[:id])
+  #   @user.destroy
+  #   flash[:notice] = "Signed out successfully."
+  #   redirect_to "/"
+  # end
 
 
 
