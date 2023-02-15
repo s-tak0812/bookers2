@@ -1,27 +1,43 @@
 <%= flash[:notice] %>
 
-<div class="text-center mx-auto col-7">
-  <div class="text-left">
-    <h1>welcome to <span><i class="fas fa-book"></i></span>Bookers !!</h1>
-    <p>
-      In <span><i class="fas fa-book"></i></span>
-      <strong>Bookers</strong>,
-      <br class="py-5">you can share and exchange your opinions , inpressions , and emotions
-      <br>about various books!
-    </p>
+
+<div class="container col-8">
 
 
+
+
+  <div class="text-center">
+    <div class="text-left">
+      <h1>welcome to <span><i class="fas fa-book"></i></span>Bookers !!</h1>
+      <p>
+        In <span><i class="fas fa-book"></i></span>
+        <strong>Bookers</strong>,
+      </p>
+      <p class="my-3">
+        you can share and exchange your opinions , inpressions , and emotions
+      </p>
+      <p class="my-3">
+        about various books!
+      </p>
+
+    </div>
   </div>
+
+  <div class="d-grid gap2 text-center">
+    <button class="m-2 col-10 btn btn-info text-light" type="button">
+      <%= link_to new_user_session_path do %>
+        Log in
+      <% end %>
+    </button>
+  </div>
+
+  <div class="d-grid gap2 text-center">
+    <button class="m-2 col-10 btn btn-success text-light" type="button">
+      <%= link_to new_user_registration_path do %>
+       Sign up
+      <% end %>
+    </button>
+  </div>
+
+
 </div>
-
-<p class="btn btn-primary btn-lg text-center bg-info text-white">
-  <%= link_to new_user_session_path do %>
-    Log in
-  <% end %>
-</p>
-
-<p class="btn btn-primary btn-lg text-center bg-success text-white">
-  <%= link_to new_user_registration_path do %>
-    Sign up
-  <% end %>
-</p>
