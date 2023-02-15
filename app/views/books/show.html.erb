@@ -1,18 +1,38 @@
 <%= flash[:notice] %>
 
-<h1>Book detail</h1>
 
-<%= link_to user_path(@book.user.id) do %>
-  <%= image_tag @book.user.get_image(100, 100) %>
-  <%= @book.user.name %>
-<% end %>
+<div class="container">
+  <div class="d-flex">
 
-|||
+    <%= render 'list', book: @book, user: @user %>
 
-<%= link_to @book.title, @book_path %>
-<%= @book.body %>
 
-<% if @book.user == current_user %>
-  <%= link_to "Edit", edit_book_path %>
-  <%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %>
-<% end %>
+    <div class="row">
+      <div class="col">
+        <h2 class="border-bottom">Book detail</h2>
+
+        <div class="container">
+          <div class="row">
+            
+            <%= link_to user_path(@book.user.id) do %>
+              <%= image_tag @book.user.get_image(100, 100) %>
+              <%= @user.name %>
+            <% end %>
+            
+          </div>
+          
+          <div class="row">
+            <%= link_to @book.title, @book_path %>
+          </div>
+          
+          <div class="row">
+            <%= @book.body %>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+
