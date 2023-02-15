@@ -1,6 +1,7 @@
+<%= flash[:notice] %>
+
 <%= flash[:success] %>
 
-<h1>Users#show=>books</h1>
 
 <div class="container">
   <div class="d-flex">
@@ -8,7 +9,7 @@
   <%= render 'books/list', book: @book, user: @user %>
 
     <div class="row">
-      <div class="col">
+      <div class="col mt-3">
         <h2 class="border-bottom">Books</h2>
 
         <div class="col">
