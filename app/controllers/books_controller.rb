@@ -39,17 +39,19 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    unless @book.user_id == current_user
+    unless @book.user_id == current_user.id
       redirect_to books_path
     end
 
   end
 
-  def destroy
-    book = Book.find(params[:id])
-    book.destroy
-    redirect_to books_path
-  end
+
+  # user削除機能　routes.rb user[:destroy]追加 user.editのコメントアウト解除
+  # def destroy
+  #   book = Book.find(params[:id])
+  #   book.destroy
+  #   redirect_to books_path
+  # end
 
 
   private

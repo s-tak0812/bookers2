@@ -13,12 +13,10 @@
 
         <div class="container">
           <div class="row">
-
             <%= link_to user_path(@book.user.id) do %>
               <%= image_tag @book.user.get_image(100, 100) %>
               <%= @user.name %>
             <% end %>
-
           </div>
 
           <div class="row">
@@ -29,10 +27,17 @@
             <%= @book.body %>
           </div>
 
+          <div>
+            <% if @book.user == current_user %>
+              <%= link_to "Edit", edit_book_path %>
+              <%= link_to "Destroy", book_path(@book), method: :delete %>
+            <% end %>
+          </div>
 
         </div>
 
       </div>
     </div>
 
-
+  </div>
+</div>
