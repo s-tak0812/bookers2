@@ -7,8 +7,8 @@ class BooksController < ApplicationController
 
 
   def show
-    @book = Book.find(params[:id])
-    @user = @book.user
+    @book_n = Book.find(params[:id])
+    @user = @book_n.user
   end
 
   def create
