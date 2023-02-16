@@ -1,10 +1,10 @@
-<div class="container ml-5">
+<div class="container ml-5 offset-md-1">
   <div class="d-flex">
 
     <%= render 'books/list', book: @book, user: @user %>
 
 
-    <div class="container ml-5">
+    <div class="container col-md-8 ml-5">
       <div class="row">
         <div class="col mt-3 col-12">
           <h2 class="pb-2 border-bottom">Users</h2>
@@ -20,7 +20,7 @@
               <% @users.each do |user| %>
                 <tr class="col-12 my-2 border-bottom">
                   <td class="p-3">
-                    <%= image_tag user.get_image(80, 80) %>
+                    <%= image_tag user.get_profile_image(80, 80) %>
                   </td>
 
                   <td align="left" valign="top" class="px-3">

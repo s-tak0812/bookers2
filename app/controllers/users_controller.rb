@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :is_matching_login_user, only: [:update, :edit]
+  before_action :is_matching_login_user, only: [:update]
+  before_action :is_matching_current_user, only: [:edit]
 
 
   def index
@@ -40,7 +41,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :image, :introduction)
+    params.require(:user).permit(:name, :profile_image, :introduction)
   end
 
   def is_matching_login_user
@@ -50,5 +51,16 @@ class UsersController < ApplicationController
     end
 
   end
+
+  def is_matching_current_user
+    user_id = params[:id].to_i
+    unless user_id == current_user.id
+      redirect_to user_path(current_user.id)
+    end
+
+  end
+
+
+
 
 end
