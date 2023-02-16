@@ -21,12 +21,12 @@
 
 <div class="container">
   <div class="d-flex">
-    <!--<div class="row">-->
+    <div class="row col-12">
       <%= render 'list', book: @book, user: @user %>
 
-      <div class="container col-md-8  offset-md-1">
+      <div class="container col-md-8 offset-md-1">
         <div class="row">
-          <div class="col mt-3 col-12">
+          <div class="col mt-3">
             <h2 class="pb-2 border-bottom">Books</h2>
 
             <div>
@@ -38,7 +38,7 @@
                 </tr>
 
                 <% @books.each do |book| %>
-                  <tr class="col-12 my-2 border-top">
+                  <tr class="my-2 border-top">
                     <td class="p-3">
                       <%= link_to user_path(book.user.id) do %>
                         <%= image_tag book.user.get_profile_image(80, 80) %>
@@ -63,6 +63,6 @@
           </div>
         </div>
       </div>
-    <!--</div>-->
+    </div>
   </div>
 </div>

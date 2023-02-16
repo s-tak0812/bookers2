@@ -1,13 +1,10 @@
 <%= flash[:notice] %>
 
 
-<div class="container col-8">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-5 col-md-8 mx-auto my-3">
 
-
-
-
-  <div class="text-center">
-    <div class="text-left">
       <h1>welcome to <span><i class="fas fa-book"></i></span>Bookers !!</h1>
       <p>
         In <span><i class="fas fa-book"></i></span>
@@ -20,20 +17,14 @@
         about various books!
       </p>
 
+      <div class="d-grid gap2 text-center">
+        <%= link_to "Log in", new_user_session_path, class: "m-2 col-10 btn btn-info text-light" %>
+      </div>
+      <div class="d-grid gap2 text-center">
+        <%= link_to "Sign up", new_user_registration_path, class: "m-2 col-10 btn btn-success text-light" %>
+      </div>
+
     </div>
   </div>
-
-  <div class="d-grid gap2 text-center">
-
-    <%= link_to "Log in", new_user_session_path, class: "m-2 col-10 btn btn-info text-light" %>
-
-  </div>
-
-  <div class="d-grid gap2 text-center">
-
-    <%= link_to "Sign up", new_user_registration_path, class: "m-2 col-10 btn btn-success text-light" %>
-
-  </div>
-
 
 </div>
