@@ -1,49 +1,48 @@
-<div class="text-center">
-  <div class="container col-5 my-3 mx-auto text-left">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-5 col-md-8 mx-auto my-3">
+      <h2>User info</h2>
 
-
-    <h1>User info</h1>
-
-
-    <div>
-
-      <% if @user.errors.any? %>
-        <div id="error_explanation">
-          <h2>
-            <%= I18n.t("errors.messages.not_saved",
-                       count: @user.errors.count,
-                       resource: @user.class.model_name.human.downcase)
-             %>
-          </h2>
-          <ul>
-            <% @user.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
+      <div>
+  
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= I18n.t("errors.messages.not_saved",
+                         count: @user.errors.count,
+                         resource: @user.class.model_name.human.downcase)
+               %>
+            </h2>
+            <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+  
+      </div>
+  
+  
+  
+      <%= form_with model:@user do |f| %>
+  
+        <p>Name</p>
+        <p><%= f.text_field :name, autofocus: true, class: "col-12" %></p>
+  
+        <p>Image</p>
+        <p><%= f.file_field :profile_image, accept: "image/*" %></p>
+  
+        <p>Introduction</p>
+        <p><%= f.text_area :introduction, autofocus: true, class: "col-12" %></p>
+  
+        <p><%= f.submit "Update User", class: "btn btn-secondary text-white"  %></p>
+  
       <% end %>
+  
+      <!--%= link_to "destroy", user_path(@user), method: :delete %>-->
+  
 
     </div>
-
-
-
-    <%= form_with model:@user do |f| %>
-
-      <p>Name</p>
-      <p><%= f.text_field :name, autofocus: true, class: "col-12" %></p>
-
-      <p>Image</p>
-      <p><%= f.file_field :profile_image, accept: "image/*" %></p>
-
-      <p>Introduction</p>
-      <p><%= f.text_area :introduction, autofocus: true, class: "col-12" %></p>
-
-      <p><%= f.submit "Update User", class: "btn btn-secondary text-white"  %></p>
-
-    <% end %>
-
-    <!--%= link_to "destroy", user_path(@user), method: :delete %>-->
-
-
   </div>
-</div>
+  
