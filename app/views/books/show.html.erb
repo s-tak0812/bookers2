@@ -1,55 +1,53 @@
 <%= flash[:notice] %>
 
 
-<div class="container ">
-  <div class="d-flex">
+<div class="d-flex">
 
-    <%= render 'list', book: @book, user: @user %>
-
-
-    <div class="container ml-5">
-      <div class="row">
-        <div class="col mt-3 col-12">
-          <h2 class="pb-2 border-bottom">Book detail</h2>
-
-          <div>
-            <table class="col-12">
-              <tr>
-                <td class="px-3">
-                  <%= link_to user_path(@book_n.user.id) do %>
-                    <%= image_tag @book_n.user.get_profile_image(100, 100) %>
-                    <div><%= @user.name %></div>
-                  <% end %>
-                </td>
-
-                <td align="left" valign="top" class="px-3">
-                  <%= link_to @book_n.title, @book_n_path %>
-                </td>
-
-                <td align="left" valign="top" class="px-3">
-                  <%= @book_n.body %>
-                </td>
+  <%= render 'list', book: @book, user: @user %>
 
 
-                <% if @book_n.user == current_user %>
-                  <td align="left" valign="top" class="px-3">
-                    <%= link_to "Edit", edit_book_path, class: "m-2 btn btn-success btn-sm text-light" %>
-                  </td>
-                  <td align="left" valign="top" class="px-3">
-                    <%= link_to "Destroy", book_path(@book_n), method: :delete, "data-confirm" => "本当に消しますか？",
-                    class: "m-2 btn btn-danger btn-sm text-light" %>
-                  </td>
+  <div class="container col-md-8  offset-md-1">
+    <div class="row">
+      <div class="col mt-3 col-12">
+        <h2 class="pb-2 border-bottom">Book detail</h2>
+
+        <div>
+          <table class="col-12">
+            <tr>
+              <td class="px-3">
+                <%= link_to user_path(@book_n.user.id) do %>
+                  <%= image_tag @book_n.user.get_profile_image(100, 100) %>
+                  <div><%= @user.name %></div>
                 <% end %>
+              </td>
 
-              </tr>
-            </table>
+              <td align="left" valign="top" class="px-3">
+                <%= link_to @book_n.title, @book_n_path %>
+              </td>
 
-          </div>
+              <td align="left" valign="top" class="px-3">
+                <%= @book_n.body %>
+              </td>
+
+
+              <% if @book_n.user == current_user %>
+                <td align="left" valign="top" class="px-3">
+                  <%= link_to "Edit", edit_book_path, class: "m-2 btn btn-success btn-sm text-light" %>
+                </td>
+                <td align="left" valign="top" class="px-3">
+                  <%= link_to "Destroy", book_path(@book_n), method: :delete, "data-confirm" => "本当に消しますか？",
+                  class: "m-2 btn btn-danger btn-sm text-light" %>
+                </td>
+              <% end %>
+
+            </tr>
+          </table>
 
         </div>
 
       </div>
-    </div>
 
+    </div>
   </div>
+
 </div>

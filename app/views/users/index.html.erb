@@ -1,53 +1,51 @@
-<div class="container ml-5 offset-md-1">
-  <div class="d-flex">
+<div class="d-flex">
 
-    <%= render 'books/list', book: @book, user: @user %>
+  <%= render 'books/list', book: @book, user: @user %>
 
 
-    <div class="container col-md-8 ml-5">
-      <div class="row">
-        <div class="col mt-3 col-12">
-          <h2 class="pb-2 border-bottom">Users</h2>
+  <div class="container col-md-8  offset-md-1">
+    <div class="row">
+      <div class="col mt-3 col-12">
+        <h2 class="pb-2 border-bottom">Users</h2>
 
-          <div>
-            <table class="col-12 table-hover">
-              <tr class="border-bottom border-secondary">
-                <th class="pb-2 px-3">image</th>
-                <th class="pb-2 px-3">name</th>
-                <th></th>
+        <div>
+          <table class="col-12 table-hover">
+            <tr class="border-bottom border-secondary">
+              <th class="pb-2 px-3">image</th>
+              <th class="pb-2 px-3">name</th>
+              <th></th>
+            </tr>
+
+            <% @users.each do |user| %>
+              <tr class="col-12 my-2 border-bottom">
+                <td class="p-3">
+                  <%= image_tag user.get_profile_image(80, 80) %>
+                </td>
+
+                <td align="left" valign="top" class="px-3">
+                  <%= user.name %>
+                </td>
+
+                <td valign="top" class="px-3">
+                  <%= link_to "Show", user_path(user.id) %>
+                </td>
               </tr>
 
-              <% @users.each do |user| %>
-                <tr class="col-12 my-2 border-bottom">
-                  <td class="p-3">
-                    <%= image_tag user.get_profile_image(80, 80) %>
-                  </td>
+             <% end %>
 
-                  <td align="left" valign="top" class="px-3">
-                    <%= user.name %>
-                  </td>
-
-                  <td valign="top" class="px-3">
-                    <%= link_to "Show", user_path(user.id) %>
-                  </td>
-                </tr>
-
-               <% end %>
-
-            </table>
-
-          </div>
+          </table>
 
         </div>
 
-
-
       </div>
-    </div>
 
+
+
+    </div>
   </div>
 
 </div>
+
 
 
 

@@ -1,45 +1,44 @@
-<div class="row">
-  <div class="col">
-    <div class="mt-3">
-      <h2>User info</h2>
+<div class="container col-md-3">
+  <div class="row">
+    <div class="col">
+      <div class="mt-3">
+        <h2>User info</h2>
 
-        <%= image_tag user.get_profile_image(100, 100), class: "mt-2 border-bottom" %>
+          <%= image_tag user.get_profile_image(100, 100), class: "mt-2 border-bottom" %>
 
-        <table>
-          <tr class="border-bottom col-10 col-md-4">
-            <th class="p-3">name</th>
-            <td class="p-3"><strong><%= user.name %></strong></td>
-          </tr>
-          <tr>
-            <th class="p-3">introduction</th>
-            <td class="p-3"><strong><%= user.introduction %></strong></td>
-          </tr>
-        </table>
+          <table>
+            <tr class="border-bottom col-10 col-md-4">
+              <th class="p-3">name</th>
+              <td class="p-3"><strong><%= user.name %></strong></td>
+            </tr>
+            <tr>
+              <th class="p-3">introduction</th>
+              <td class="p-3"><strong><%= user.introduction %></strong></td>
+            </tr>
+          </table>
 
-        <div class="d-grid gap2 text-center">
-          <%= link_to edit_user_path(user), class: "col-12 mt-5 btn btn-outline-secondary" do %>
-            <i class="fas fa-user-cog"></i>
-          <% end %>
-        </div>
+          <div class="d-grid gap2 text-center">
+            <%= link_to edit_user_path(user), class: "col-12 mt-5 btn btn-outline-secondary" do %>
+              <i class="fas fa-user-cog"></i>
+            <% end %>
+          </div>
 
+      </div>
+
+      <div>
+        <h2 class="mt-3">New book</h2>
+
+        <%= form_with model:book do |f| %>
+          <p>Title</p>
+          <p><%= f.text_field :title, class: "col-12"  %></p>
+
+          <p>Opinion</p>
+          <p><%= f.text_area :body, class: "col-12" %></p>
+
+          <p><%= f.submit "Create Book", class: "btn btn-success" %></p>
+
+        <% end %>
+      </div>
     </div>
-
-    <div>
-      <h2 class="mt-3">New book</h2>
-
-      <%= form_with model:book do |f| %>
-        <p>Title</p>
-        <p><%= f.text_field :title, class: "col-12"  %></p>
-
-        <p>Opinion</p>
-        <p><%= f.text_area :body, class: "col-12" %></p>
-
-        <p><%= f.submit "Create Book", class: "btn btn-success" %></p>
-
-      <% end %>
-    </div>
-
   </div>
-
 </div>
-
