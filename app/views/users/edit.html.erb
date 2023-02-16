@@ -30,20 +30,20 @@
     <%= form_with model:@user do |f| %>
 
       <p>Name</p>
-      <p><%= f.text_field :name, autofocus: true %></p>
+      <p><%= f.text_field :name, autofocus: true, class: "col-12" %></p>
 
       <p>Image</p>
       <p><%= f.file_field :image %></p>
 
       <p>Introduction</p>
-      <p><%= f.text_area :introduction, autofocus: true %></p>
+      <p><%= f.text_area :introduction, autofocus: true, class: "col-12" %></p>
 
       <p><%= f.submit "Update User", class: "btn btn-secondary text-white"  %></p>
 
     <% end %>
-    
+
     <!--%= link_to "destroy", user_path(@user), method: :delete %>-->
 
-    
+
   </div>
 </div>

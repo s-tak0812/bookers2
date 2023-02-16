@@ -46,12 +46,11 @@ class BooksController < ApplicationController
   end
 
 
-  # user削除機能　routes.rb user[:destroy]追加 user.editのコメントアウト解除
-  # def destroy
-  #   book = Book.find(params[:id])
-  #   book.destroy
-  #   redirect_to books_path
-  # end
+  def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to books_path
+  end
 
 
   private

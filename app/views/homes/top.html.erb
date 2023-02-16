@@ -24,19 +24,15 @@
   </div>
 
   <div class="d-grid gap2 text-center">
-    <button class="m-2 col-10 btn btn-info text-light" type="button">
-      <%= link_to new_user_session_path do %>
-        Log in
-      <% end %>
-    </button>
+
+    <%= link_to "Log in", new_user_session_path, class: "m-2 col-10 btn btn-info text-light" %>
+
   </div>
 
   <div class="d-grid gap2 text-center">
-    <button class="m-2 col-10 btn btn-success text-light" type="button">
-      <%= link_to new_user_registration_path do %>
-       Sign up
-      <% end %>
-    </button>
+
+    <%= link_to "Sign up", new_user_registration_path, class: "m-2 col-10 btn btn-success text-light" %>
+
   </div>
 
 

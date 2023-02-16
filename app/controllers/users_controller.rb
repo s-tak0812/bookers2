@@ -28,11 +28,13 @@ class UsersController < ApplicationController
     @user = User.find(current_user[:id])
   end
 
-  def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-    redirect_to users_path
-  end
+
+    # user削除機能　routes.rb user[:destroy]追加 user.editのコメントアウト解除
+  # def destroy
+  #   @user = User.find(params[:id])
+  #   @user.destroy
+  #   redirect_to users_path
+  # end
 
 
   private
