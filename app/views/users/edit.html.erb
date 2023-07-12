@@ -4,7 +4,6 @@
       <h2>User info</h2>
 
       <div>
-
         <% if @user.errors.any? %>
           <div id="error_explanation">
             <h2>
@@ -20,13 +19,9 @@
             </ul>
           </div>
         <% end %>
-
       </div>
 
-
-
       <%= form_with model:@user do |f| %>
-
         <p>Name</p>
         <p><%= f.text_field :name, autofocus: true, class: "col-12" %></p>
 
@@ -37,11 +32,9 @@
         <p><%= f.text_area :introduction, autofocus: true, class: "col-12" %></p>
 
         <p><%= f.submit "Update User", class: "btn btn-secondary text-white"  %></p>
-
       <% end %>
 
       <!--%= link_to "destroy", user_path(@user), method: :delete %>-->
-
 
     </div>
   </div>
